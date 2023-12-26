@@ -2,10 +2,11 @@ import React from 'react';
 
 import MovieListItem from './MovieListItem';
 import MovieListFooter from './MovieListFooter';
+import { useSelector } from 'react-redux';
 
 const MovieList = (props) => {
-  const movies = [];
-
+  const movies = useSelector( s => s.movie.movies); // içerideki movie store daki combinReducer dan geldi. movies ise movideReducer daki initial state de bulunan movies den geldi
+ 
   return (
     <div className="flex-1">
       <div className="overflow-hidden bg-white rounded-md shadow mb-4 sm:min-h-[400px]">
